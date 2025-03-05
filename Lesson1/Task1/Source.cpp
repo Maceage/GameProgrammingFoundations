@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	int numberOne, numberTwo, numberThree;
+	int numberOne, numberTwo, numberThree, numberFour, numberFive;
 
 	cout << "Enter the first number: ";
 	cin >> numberOne;
@@ -15,9 +15,15 @@ int main()
 	cout << "Enter the third number: ";
 	cin >> numberThree;
 
-	int total = numberOne + numberTwo + numberThree;
+	cout << "Enter the fourth number: ";
+	cin >> numberFour;
 
-	double average = total / 3;
+	cout << "Enter the fifth number: ";
+	cin >> numberFive;
+
+	int total = numberOne + numberTwo + numberThree + numberFour + numberFive;
+
+	double average = total / 5;
 
 	cout << "Average of numbers is: " << average;
 
