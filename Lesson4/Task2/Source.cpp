@@ -1,12 +1,13 @@
 #include <iostream>
+#define ARRAY_SIZE 20
 
 using namespace std;
 
-static int sumOfAllValues(int valuesArray[])
+static int sumOfAllValues(int valuesArray[], int arraySize)
 {
 	int sum = 0;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < arraySize; i++)
 	{
 		sum += valuesArray[i];
 	}
@@ -14,11 +15,11 @@ static int sumOfAllValues(int valuesArray[])
 	return sum;
 }
 
-static int getLargestValue(int valuesArray[])
+static int getLargestValue(int valuesArray[], int arraySize)
 {
 	int largestValue = valuesArray[0];
 
-	for (int i = 1; i < 10; i++)
+	for (int i = 1; i < arraySize; i++)
 	{
 		if (valuesArray[i] > largestValue)
 		{
@@ -29,11 +30,11 @@ static int getLargestValue(int valuesArray[])
 	return largestValue;
 }
 
-static int getSmallestValue(int valuesArray[])
+static int getSmallestValue(int valuesArray[], int arraySize)
 {
 	int smallestValue = valuesArray[0];
 
-	for (int i = 1; i < 10; i++)
+	for (int i = 1; i < arraySize; i++)
 	{
 		if (valuesArray[i] < smallestValue)
 		{
@@ -44,11 +45,11 @@ static int getSmallestValue(int valuesArray[])
 	return smallestValue;
 }
 
-static int getNumberOfOddValues(int valuesArray[])
+static int getNumberOfOddValues(int valuesArray[], int arraySize)
 {
 	int numberOfOddValues = 0;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < arraySize; i++)
 	{
 		if (valuesArray[i] % 2 != 0)
 		{
@@ -61,7 +62,9 @@ static int getNumberOfOddValues(int valuesArray[])
 
 int main()
 {
-	int values[10];
+	int arraySize = ARRAY_SIZE;
+
+	int values[ARRAY_SIZE];
 	int currentIndex = 0;
 
 	do
@@ -70,22 +73,22 @@ int main()
 		cin >> values[currentIndex];
 		currentIndex++;
 	}
-	while (currentIndex < 10);
+	while (currentIndex < ARRAY_SIZE);
 
-	int sum = sumOfAllValues(values);
+	int sum = sumOfAllValues(values, arraySize);
 	cout << "Sum of all values: " << sum << '\n';
 
-	float average = (float)sum / 10;
+	float average = (float)sum / arraySize;
 	cout << "Average of all values: " << average << '\n';
 
-	int largestValue = getLargestValue(values);
+	int largestValue = getLargestValue(values, arraySize);
 	cout << "Largest value: " << largestValue << '\n';
 
-	int smallestValue = getSmallestValue(values);
+	int smallestValue = getSmallestValue(values, arraySize);
 	cout << "Smallest value: " << smallestValue << '\n';
 
-	int numberOfOddValues = getNumberOfOddValues(values);
-	int numberOfEvenValues = 10 - numberOfOddValues;
+	int numberOfOddValues = getNumberOfOddValues(values, arraySize);
+	int numberOfEvenValues = arraySize - numberOfOddValues;
 	cout << "Number of odd values: " << numberOfOddValues << '\n';
 	cout << "Number of even values: " << numberOfEvenValues << '\n';
 
