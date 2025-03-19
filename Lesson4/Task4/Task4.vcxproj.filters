@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Maze.txt" />
+    <Text Include="Todo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">

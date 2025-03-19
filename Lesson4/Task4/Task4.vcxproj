@@ -134,6 +134,7 @@
       <FileType>Text</FileType>
       <DeploymentContent>true</DeploymentContent>
     </Text>
+    <Text Include="Todo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
