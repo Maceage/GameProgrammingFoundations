@@ -5,7 +5,7 @@ using namespace std;
 
 constexpr int NUMBER_OF_INTS = 10;
 
-vector<int> bubble_sort(vector<int> ints);
+vector<int> bubble_sort(vector<int> ints, bool sort_ascending);
 
 int main()
 {
@@ -25,19 +25,34 @@ int main()
 		cout << random_int << ",";
 	}
 
-	random_ints = bubble_sort(random_ints);
+	cout << "\nChoose direction to sort integers:\n";
+	cout << "\nA for Ascending, D for Descending\n";
 
-	cout << "\nSorted integers:\n";
+	char direction;
+	cin >> direction;
 
-	for (int random_int : random_ints)
+	if ((direction == 'A') || direction == 'D')
 	{
-		cout << random_int << ",";
+		bool is_ascending = direction == 'A';
+
+		random_ints = bubble_sort(random_ints, is_ascending);
+
+		cout << "\nSorted integers:\n";
+
+		for (int random_int : random_ints)
+		{
+			cout << random_int << ",";
+		}
+	}
+	else
+	{
+		cout << "Invalid direction selected - exiting";
 	}
 
 	return 0;
 }
 
-vector<int> bubble_sort(vector<int> ints)
+vector<int> bubble_sort(vector<int> ints, bool ascending)
 {
 	bool swapped = false;
 
@@ -49,15 +64,28 @@ vector<int> bubble_sort(vector<int> ints)
 
 		for (int i = 1; i <= size - 1; i++)
 		{
-			if (ints[i - 1] > ints[i])
-			{
-				int left = ints[i - 1];
-				int right = ints[i];
+			int left = ints[i - 1];
+			int right = ints[i];
 
-				ints[i] = left;
-				ints[i - 1] = right;
-				
-				swapped = true;
+			if (ascending)
+			{
+				if (left > right)
+				{
+					ints[i] = left;
+					ints[i - 1] = right;
+
+					swapped = true;
+				}
+			}
+			else
+			{
+				if (left < right)
+				{
+					ints[i] = left;
+					ints[i - 1] = right;
+
+					swapped = true;
+				}
 			}
 		}
 	} while (swapped);
