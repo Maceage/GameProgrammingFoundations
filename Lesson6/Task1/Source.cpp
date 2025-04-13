@@ -25,12 +25,15 @@ int main()
 	cout << "Name:\t" << person_one->name << "\n";
 	cout << "Age:\t" << person_one->age << "\n";
 	cout << "Height:\t" << person_one->height << "\n";
+	cout << "Size:\t" << sizeof(*person_one) << " bytes\n";
+
 	cout << "\n";
 
 	cout << "Person two\n";
 	cout << "Name:\t" << person_two->name << "\n";
 	cout << "Age:\t" << person_two->age << "\n";
 	cout << "Height:\t" << person_two->height << "\n";
+	cout << "Size:\t" << sizeof(*person_two) << " bytes\n";
 
 	return 0;
 }
