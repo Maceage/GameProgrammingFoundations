@@ -24,9 +24,13 @@ int main()
 	std::cout << "\n";
 
 	delete bank_account;
+	bank_account = nullptr;
+
 	std::cout << "\n";
 
 	delete bank_account2;
+	bank_account2 = nullptr;
+
 	std::cout << "\n";
 
 	return 0;
